@@ -1,52 +1,5 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'orders/show'
-  end
-  namespace :admin do
-    get 'homes/top'
-  end
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-  end
-  namespace :admin do
-    get 'genres/index'
-    get 'genres/edit'
-  end
-  namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
-  end
-  namespace :public do
-    get 'shipping_addresses/index'
-    get 'shipping_addresses/edit'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/unsubscribe'
-    get 'customers/edit'
-  end
-  namespace :public do
-    get 'orders/new'
-    get 'orders/confirm'
-    get 'orders/thanks'
-    get 'orders/show'
-    get 'orders/index'
-  end
-  namespace :public do
-    get 'cart_items/index'
-  end
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
-  end
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
-  end
+  
  devise_for :admin, controllers: {
   sessions:      'admin/sessions',
   passwords:     'admin/passwords',
@@ -57,5 +10,28 @@ devise_for :customers, controllers: {
   passwords:     'public/passwords',
   registrations: 'public/registrations'
 }
+
+  namespace :admin do
+    resources :orders, only: [:show, :update]
+    get "/" => "homes#top"
+    resources :customers, only: [:index, :show, :edit, :update]
+    resources :genres, only: [:index, :edit, :create, :update]
+    resources :items, only: [:index, :create, :new, :show, :edit, :update]
+    resources :order_details, only: [:update]
+  end
+  scope module: :public do
+    resources :shipping_addresses, only: [:index, :create, :destroy, :edit, :update]
+    resource :customers, only: [:show, :update, :edit]
+    get "/customers/unsubscribe" => "customers#unsubscribe"
+    patch "/customers/withdraw" => "customers#withdraw"
+    resources :orders, only: [:new, :create, :show, :index]
+    post "/orders/confirm" => "orders#confirm"
+    get "/orders/thanks" => "orders#thanks"
+    resources :cart_items, only: [:index, :create, :destroy, :update]
+    delete "/cart_items/destroy_all" => "cart_items#destroy_all"
+    resources :items, only: [:index, :show]
+    root "homes#top"
+    get "/about" => "homes#about"
+  end
 
 end
