@@ -4,44 +4,77 @@
     <title>NaganoCake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <%= image_tag "S__11862023.jpg", :size => "50x50" %>
-      <% if admin_signed_in? %>
-      <!--adminログイン時のヘッダー-->
-      <ul>
-       <li><%= link_to "商品一覧", admin_items_path %></li>
-       <li><%= link_to "会員一覧", admin_customers_path %></li>
-       <li><%= link_to "注文履歴一覧", admin_order_path  %></li>
-       <li><%= link_to "ジャンル一覧", admin_genres_path %></li>
-       <li><%= link_to "ログアウト", "#" %></li>
-       </ul>
-       <form>
-        <input type="search"  placeholder="キーワードを入力">
-        <input type="submit" value="検索">
-       </form>
-      <% elsif customer_signed_in? %> 
-      <!--ccustomersログイン時のヘッダー-->
-      <ul>
-       <li><%= link_to "マイページ", customers_path %></li>
-       <li><%= link_to "商品一覧", items_path %></li>
-       <li><%= link_to "カート", cart_items_path %></li>
-       <li><%= link_to "ログアウト",  destroy_customer_session_path, method: :delete %></li>
-      </ul>
-      <% else %>
-      <!--ログイン前時のヘッダー-->
-      <ul>
-       <li><%= link_to "About", about_path %></li>
-       <li><%= link_to "商品一覧", items_path %></li>
-       <li><%= link_to "新規登録", new_customer_registration_path %></li>
-       <li><%= link_to "ログイン", new_customer_session_path %></li>
-      </ul>
-      <% end %>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand p-3" href="/"><%= image_tag "S__11862023.jpg", :size => "50x50" %></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              
+            <!--adminログイン時のヘッダー-->
+            <% if admin_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "商品一覧", admin_items_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "会員一覧", admin_customers_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "注文履歴一覧", admin_order_path  %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ジャンル一覧", admin_genres_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログアウト", "#" %>
+              </li>
+              <form>
+                <input type="search"  placeholder="キーワードを入力">
+                <input type="submit" value="検索">
+              </form>
+            
+            <!--customersログイン時のヘッダー-->
+            <% elsif customer_signed_in? %> 
+              <li class="nav-item">
+                <%= link_to "マイページ", customers_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "商品一覧", items_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "カート", cart_items_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログアウト",  destroy_customer_session_path, method: :delete %>
+              </li>
+            <% else %>
+            <!--ログイン前時のヘッダー-->
+              <li class="nav-item">
+                <%= link_to "About", about_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "商品一覧", items_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_customer_registration_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_customer_session_path %>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <%= yield %>
     <footer>
