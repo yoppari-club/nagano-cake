@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_022917) do
+ActiveRecord::Schema.define(version: 2021_03_16_053747) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2021_03_16_022917) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.integer "customer_id", null: false
+    t.integer "amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -32,8 +40,65 @@ ActiveRecord::Schema.define(version: 2021_03_16_022917) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name_kana", default: "", null: false
+    t.string "first_name_kana", default: "", null: false
+    t.string "postcode", default: "", null: false
+    t.string "address", default: "", null: false
+    t.string "tel", default: "", null: false
+    t.boolean "withdrawal_status", default: false, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "price_excluding_tax", null: false
+    t.string "image_id"
+    t.integer "genre_id", null: false
+    t.boolean "sales_status", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_details", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.integer "order_id", null: false
+    t.integer "amount", null: false
+    t.integer "price_including_tax", null: false
+    t.integer "production_status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "total_payment", null: false
+    t.integer "payment_option", default: 0, null: false
+    t.integer "shipping_fee", null: false
+    t.string "shipping_address", null: false
+    t.string "shipping_postcode", null: false
+    t.string "shipping_name", null: false
+    t.integer "order_status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.string "shipping_postcode", null: false
+    t.string "shipping_address", null: false
+    t.string "shipping_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

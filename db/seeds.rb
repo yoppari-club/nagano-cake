@@ -27,7 +27,7 @@ Admin.create!(
   )
   
 5.times do |n|
- Shipping_address.create!(
+ ShippingAddress.create!(
   customer_id: n+1,
   shipping_postcode: "1111111",
   shipping_address: "テスト県テスト市テスト#{n + 1}",
@@ -104,7 +104,7 @@ Order.create!(
   order_status: 0
   )
   
-Order_detail.create!(
+OrderDetail.create!(
   item_id: 1,
   order_id: 1,
   amount: 1,
@@ -112,7 +112,7 @@ Order_detail.create!(
   production_status: 0
   )
   
-Order_detail.create!(
+OrderDetail.create!(
   item_id: 2,
   order_id: 1,
   amount: 1,
@@ -120,7 +120,7 @@ Order_detail.create!(
   production_status: 0
   )
 
-Order_detail.create!(
+OrderDetail.create!(
   item_id: 3,
   order_id: 2,
   amount: 1,
@@ -128,7 +128,7 @@ Order_detail.create!(
   production_status: 0
   )
   
-Order_detail.create!(
+OrderDetail.create!(
   item_id: 4,
   order_id: 2,
   amount: 1,
