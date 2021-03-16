@@ -27,7 +27,7 @@ Admin.create!(
   )
   
 5.times do |n|
- Shipping_address.crate!(
+ Shipping_address.create!(
   customer_id: n+1,
   shipping_postcode: "1111111",
   shipping_address: "テスト県テスト市テスト#{n + 1}",
@@ -36,7 +36,7 @@ Admin.create!(
   end
   
 Genre.create!(
-  name:"ケーキ"
+  name: "ケーキ"
   )
 Genre.create!(
   name: "プリン"
@@ -48,39 +48,39 @@ Genre.create!(
   name: "キャンディ"
   )
   
-Item.crate!(
+Item.create!(
   name: "チーズケーキ",
   description: "チーズケーキです",
   price_excluding_tax: 300,
   genre_id: 1,
-  sales_status:true
+  sales_status: true
   )
   
-Item.crate!(
+Item.create!(
   name: "シュークリーム",
   description: "シュークリームです",
   price_excluding_tax: 150,
   genre_id: 3,
-  sales_status:true
+  sales_status: true
   )
   
-Item.crate!(
+Item.create!(
   name: "プリン",
   description: "プリンです",
   price_excluding_tax: 200,
   genre_id: 2,
-  sales_status:true
+  sales_status: true
   )
 
-Item.crate!(
+Item.create!(
   name: "マシュマロキャンディ",
   description: "マシュマロキャンディです",
   price_excluding_tax: 300,
   genre_id: 4,
-  sales_status:true
+  sales_status: true
   )
   
-Order.crate!(
+Order.create!(
   customer_id: 1,
   # チーズケーキとシュークリーム購入
   total_payment: 495,
@@ -92,7 +92,7 @@ Order.crate!(
   order_status: 0
   )
   
-Order.crate!(
+Order.create!(
   customer_id: 2,
   # プリンとマシュマロキャンディ購入
   total_payment: 550,
@@ -104,7 +104,7 @@ Order.crate!(
   order_status: 0
   )
   
-Order_detail.crate!(
+Order_detail.create!(
   item_id: 1,
   order_id: 1,
   amount: 1,
@@ -112,7 +112,7 @@ Order_detail.crate!(
   production_status: 0
   )
   
-Order_detail.crate!(
+Order_detail.create!(
   item_id: 2,
   order_id: 1,
   amount: 1,
@@ -120,7 +120,7 @@ Order_detail.crate!(
   production_status: 0
   )
 
-Order_detail.crate!(
+Order_detail.create!(
   item_id: 3,
   order_id: 2,
   amount: 1,
@@ -128,7 +128,7 @@ Order_detail.crate!(
   production_status: 0
   )
   
-Order_detail.crate!(
+Order_detail.create!(
   item_id: 4,
   order_id: 2,
   amount: 1,
