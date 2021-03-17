@@ -1,10 +1,10 @@
 <div class="container">
 <h2>商品一覧(全<%= @items.count %>件)</h2>
-  <div class="row">
+  <div class="row mt-5 mb-5">
     <% @items.each do |item|%>
     <div class="col-md-2 mx-auto text-center">
       <%= link_to item_path(item) do%>
-         <p><%= image_tag 'no_image.jpg' %></p>
+         <p><%= attachment_image_tag item, :image, size: "250x180", format: "jpeg" %></p>
       <% end %>
        <p class="text-left"><%= item.name %></p>
        <p class="text-left"><%= item.price_excluding_tax %></p>
@@ -12,4 +12,4 @@
     <% end %>
     <%= paginate @items %>
   </div>
-</div
+</div>
