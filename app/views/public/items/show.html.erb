@@ -6,7 +6,9 @@
       <div class="col-md-8">
         <h3><%= @item.name %></h3>
         <p><%= @item.description %></p>
-        <p>¥ <%= @item.price_excluding_tax %> (税込)</p>
+        <p>¥ <%= change_price_excluding_tax( @item.price_excluding_tax) %> (税込)</p>
+        <p><%= render "item_amount_form", cart_item: @cart_item, item: @item %></p>
       </div>
   </div>
 </div>
+
