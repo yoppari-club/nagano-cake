@@ -2,6 +2,7 @@
 
 class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :reject_withdraw_customer, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -24,4 +25,12 @@ class Public::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  
+  def reject_withdraw_customer
+    @customer = current_customer
+    if @customer.withdrawal_status == true
+      reset_session
+      redirect_to new_customer_session_path
+    end
+  end
 end
