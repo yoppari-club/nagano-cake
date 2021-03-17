@@ -6,6 +6,15 @@ class Public::CartItemsController < ApplicationController
   end
 
   def create
+    @cart_item = CartItem.new(cart_item_params)
+    @cart_item.user_id = current_customer.id
+    if @cart_item.save
+      flash[:success] = "カートに追加しました"
+      redirect_to cart_items_path
+    else
+      flash[:alert] = "予期せぬエラーが発生しました"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def update
@@ -19,17 +28,19 @@ class Public::CartItemsController < ApplicationController
     end
   end
 
+  def destroy_all
+    CartItem.where(customer_id: current_customer.id).destroy_all
+    flash[:success] = "カートの中身を空にしました"
+    redirect_back(fallback_location: root_path)
+  end
+
   def destroy
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
     redirect_back(fallback_location: root_path)
   end
 
-  def destroy_all
-    CartItem.where(customer_id: current_customer.id).destroy_all
-    flash[:success] = "カートの中身を空にしました"
-    redirect_back(fallback_location: root_path)
-  end
+
 
   private
 
