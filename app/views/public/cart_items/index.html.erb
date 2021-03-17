@@ -1,2 +1,43 @@
-<h1>Public::CartItems#index</h1>
-<p>Find me in app/views/public/cart_items/index.html.erb</p>
+<div class="container">
+  <div class="low">
+    <div class="col-sm-12 col-md-10 col-lg-10 px-10 px-sm-0 mx-auto">
+      <h2>ショッピングカート</h2>
+      <%= link_to "カートを空にする", cart_items_destroy_all_path, class: "btn btn-danger float-right" %>
+      <table class="table" style="table-layout:fixed;">
+        <thead>
+          <tr>
+            <th style="width:200px;">商品名</th>
+            <th style="width:100px;">単価(税込み)</th>
+            <th style="width:300px;">数量</th>
+            <th style="width:100px;">小計</th>
+            <th style="width:200px;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @total_amount = 0 %>
+          <% @cart_items.each do |cart_item| %>
+            <tr>
+              <td><%= cart_item.item.name %></td>
+              <td><%= change_price_excluding_tax(cart_item.item.price_excluding_tax) %></td>
+              <td><%= render "item_amount_form", cart_item: cart_item %></td>
+              <td><%= amount = change_price_excluding_tax(cart_item.item.price_excluding_tax * cart_item.amount) %></td>
+              <td><%= link_to "削除する", cart_item_path(cart_item), class: "btn btn-danger", method: :delete, data: { confirm: '削除しますか？' } %></td>
+            </tr>
+            <% @total_amount += amount %>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "買い物を続ける", root_url, class: "btn btn-success" %>
+      <table class="table">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>合計金額</td>
+          <td><%= @total_amount %></td>
+        </tr>
+      </table>
+      <%= link_to "情報入力へ進む", new_order_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>
