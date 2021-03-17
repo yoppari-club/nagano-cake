@@ -1,5 +1,5 @@
 <p>ジャンル編集</p>
-<%= form_with model: @genre, url: admin_genre_path do |f| %>
+<%= form_with model: @genre, url: admin_genre_path, method: :patch, local: true do |f| %>
   <%= f.label :name, "ジャンル名" %>
   <%= f.text_area :name, value: @genre.name %>
   <%=f.submit "変更を保存" %>
