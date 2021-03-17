@@ -12,7 +12,7 @@ devise_for :customers, controllers: {
 }
 
   namespace :admin do
-    resources :orders, only: [:show, :update]
+    resources :orders, only: [:index,:show, :update]
     get "/" => "homes#top"
     resources :customers, only: [:index, :show, :edit, :update]
     resources :genres, only: [:index, :edit, :create, :update]
