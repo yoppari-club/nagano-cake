@@ -1,16 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 mt-5 mb-5 mx-auto">
-      <div id="error_explanation">
-        <% if @item.errors.any? %>
-            <h2><%= @item.errors.count %> error prohibited this obj from being saved:</h2>
-            <ul>
-                <% @item.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-            </ul>
-        <% end %>
-      </div>
+      <%= render "error_messages", item: @item %>
       <h2>商品編集</h2>
       <%= form_with model: @item, url: admin_item_path, local: true do |f| %>
         <div class="form-group">
