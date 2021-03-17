@@ -7,7 +7,7 @@ class Public::CartItemsController < ApplicationController
 
   def create
     @cart_item = CartItem.new(cart_item_params)
-    @cart_item.user_id = current_customer.id
+    @cart_item.customer_id = current_customer.id
     if @cart_item.save
       flash[:success] = "カートに追加しました"
       redirect_to cart_items_path
