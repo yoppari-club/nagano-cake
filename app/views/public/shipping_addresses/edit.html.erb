@@ -1,2 +1,16 @@
-<h1>Public::ShippingAddresses#edit</h1>
-<p>Find me in app/views/public/shipping_addresses/edit.html.erb</p>
+<h2>配送先編集</h2>
+<%= form_with model: @shipping_address, local: true do |f| %>
+<div calss="form-group">
+  <%= f.label :"郵便番号(ハイフンなし)" %>
+  <%= f.text_field :shipping_postcode, placeholder:"0000000" %>
+</div>
+<div calss="form-group">
+  <%= f.label :"住所" %>
+  <%= f.text_field :shipping_address, placeholder:"住所を入力してください", :size => "50" %>
+</div>
+<div calss="form-group">
+  <%= f.label :"宛名" %>
+  <%= f.text_field :shipping_name, placeholder:"名前を入力してください"%>
+　<%= f.submit "変更内容を保存" %></td>
+</div>
+<% end %>
