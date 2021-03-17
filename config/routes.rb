@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
  devise_for :admin, controllers: {
   sessions:      'admin/sessions',
   passwords:     'admin/passwords',
@@ -21,14 +21,14 @@ devise_for :customers, controllers: {
   end
   scope module: :public do
     resources :shipping_addresses, only: [:index, :create, :destroy, :edit, :update]
+    resource :customers, only: [:show, :update, :edit]
     get "/customers/unsubscribe" => "customers#unsubscribe"
     patch "/customers/withdraw" => "customers#withdraw"
-    resource :customers, only: [:show, :update, :edit]
+    resources :orders, only: [:new, :create, :show, :index]
     post "/orders/confirm" => "orders#confirm"
     get "/orders/thanks" => "orders#thanks"
-    resources :orders, only: [:new, :create, :show, :index]
-    delete "/cart_items/destroy_all" => "cart_items#destroy_all"
     resources :cart_items, only: [:index, :create, :destroy, :update]
+    delete "/cart_items/destroy_all" => "cart_items#destroy_all"
     resources :items, only: [:index, :show]
     root "homes#top"
     get "/about" => "homes#about"
