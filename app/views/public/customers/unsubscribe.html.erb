@@ -1,2 +1,4 @@
-<h1>Public::Customers#unsubscribe</h1>
-<p>Find me in app/views/public/customers/unsubscribe.html.erb</p>
+<h1>退会画面</h1>
+退会しますか？
+
+  <%= button_to "退会する", customers_withdraw_path, method: :patch, data: { confirm: "本当に退会しますか？" } %>
