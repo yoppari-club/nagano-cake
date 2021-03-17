@@ -6,18 +6,18 @@
   <div class="field">
     <%= f.label "名前" %>
     <%= f.label "(姓)" %>
-    <%= f.email_field :last_name, autocomplete: "令和" %>
+    <%= f.text_field :last_name, autocomplete: "令和" %>
 
     <%= f.label "(名)" %>
-    <%= f.email_field :first_name, autocomplete: "道子" %>
+    <%= f.text_field :first_name, autocomplete: "道子" %>
   </div>
   <div class="field">
     <%= f.label "フリガナ" %>
     <%= f.label "(セイ)" %>
-    <%= f.email_field :last_name_kana, autocomplete: "レイワ" %>
+    <%= f.text_field :last_name_kana, autocomplete: "レイワ" %>
 
     <%= f.label "(メイ)" %>
-    <%= f.email_field :first_name_kana, autocomplete: "ミチコ" %>
+    <%= f.text_field :first_name_kana, autocomplete: "ミチコ" %>
   </div>
   <div class="field">
     <%= f.label "メールアドレス" %>
@@ -25,15 +25,15 @@
   </div>
   <div class="field">
     <%= f.label "郵便番号(ハイフンなし)" %>
-    <%= f.email_field :postcode, autocomplete: "0000000" %>
+    <%= f.text_field :postcode, autocomplete: "0000000" %>
   </div>
   <div class="field">
     <%= f.label "住所" %>
-    <%= f.email_field :address, autocomplete: "東京都渋谷区代々木神園町0-0" %>
+    <%= f.text_field :address, autocomplete: "東京都渋谷区代々木神園町0-0" %>
   </div>
   <div class="field">
     <%= f.label "電話番号(ハイフンなし)" %>
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.text_field :tel, autocomplete: "00000000000" %>
   </div>
 
   <div class="field">
