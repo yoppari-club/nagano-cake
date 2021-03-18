@@ -5,17 +5,15 @@ class Admin::CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find_by(params[:id])
+    @customer = Customer.find(params[:id])
   end
 
   def edit
-    @customer = Customer.find_by(params[:id])
+    @customer = Customer.find(params[:id])
   end
   
   def update
-    @customer = Customer.find_by(params[:id])
-    p "----------"
-    p @customer
+    @customer = Customer.find(params[:id])
     @customer.update(customer_params)
   end
   
