@@ -1,15 +1,15 @@
-<div class="container">
-<h2>商品一覧(全<%= @items.count %>件)</h2>
-  <div class="row mt-5 mb-5">
+<div class="container mt-5 mb-5">
+  <h2>商品一覧(全<%= @items.count %>件)</h2>
+  <div class="row mt-3 mb-3">
     <% @items.each do |item|%>
-    <div class="col-md-2 mx-auto text-center">
+    <div class="col-md-3">
       <%= link_to item_path(item) do%>
-         <p><%= attachment_image_tag item, :image, size: "250x180", format: "jpeg" %></p>
+         <p><%= attachment_image_tag item, :image, size: "250x180", format: "jpeg", fallback: "no_image.jpeg" %></p>
       <% end %>
        <p class="text-left"><%= item.name %></p>
-       <p class="text-left"><%= item.price_excluding_tax %></p>
+       <p class="text-left">¥<%= item.price_excluding_tax %></p>
     </div>
     <% end %>
-    <%= paginate @items %>
   </div>
+  <%= paginate @items %>
 </div>
