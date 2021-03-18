@@ -17,9 +17,34 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, input, textarea, button, select {
+    font-family: Montserrat, 游ゴシック, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
 header {
-  height: 120px;
+  background-color: #eee9dd;
+  color: #592e15;
   border:solid 1px black;
+}
+
+.navbar-nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    font-family: "Neuzeit Office Soft Rounded", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+    
+footer {
+  background-color: #eddfce;
+  padding: 30px 0;
+  color: #592e15;
 }
 
 footer {
