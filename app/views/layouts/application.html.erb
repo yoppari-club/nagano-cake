@@ -19,7 +19,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-              
+
             <!--adminログイン時のヘッダー-->
             <% if admin_signed_in? %>
               <li class="nav-item">
@@ -41,9 +41,9 @@
                 <input type="search"  placeholder="キーワードを入力">
                 <input type="submit" value="検索">
               </form>
-            
+
             <!--customersログイン時のヘッダー-->
-            <% elsif customer_signed_in? %> 
+            <% elsif customer_signed_in? %>
               <li class="nav-item">
                 ようこそ”<%= current_customer.last_name %><%= current_customer.first_name %>さん
               </li>
@@ -79,7 +79,7 @@
         </div>
       </nav>
     </header>
-    
+
     <%= yield %>
     <footer>
       フッター

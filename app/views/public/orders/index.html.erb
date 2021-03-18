@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-10 col-lg-10 px-10 px-sm-0 mx-auto">
+    <div class="col-sm-10 px-sm-0 mx-auto">
       <h2>注文履歴一覧</h2>
-      <table class="table" style="table-layout:fixed;">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th class="table-active">注文日</th>
@@ -16,16 +16,16 @@
         <tbody>
           <% @orders.each do |order| %>
             <tr>
-              <td><%= order.created_at %></td>
-              <td><%= "〒#{order.shipping_postcode}" %><br><%= order.shipping_address %><br><%= order.shipping_name %></td>
-              <td>
+              <td class="align-middle"><%= order.created_at.strftime('%Y/%m/%d') %></td>
+              <td class="align-middle"><%= "〒#{order.shipping_postcode}" %><br><%= order.shipping_address %><br><%= order.shipping_name %></td>
+              <td class="align-middle">
                 <% order.order_details.each do |order_detail| %>
                   <%= order_detail.item.name %><br>
                 <% end %>
               </td>
-              <td><%= "#{order.total_payment}円" %></td>
-              <td><%= order.order_status %></td>
-              <td><%= link_to "表示する", order_path(order), class: "btn btn-primary"  %></td>
+              <td class="align-middle"><%= "#{order.total_payment}円" %></td>
+              <td class="align-middle"><%= order.order_status %></td>
+              <td class="align-middle"><%= link_to "表示する", order_path(order), class: "btn btn-primary"  %></td>
             </tr>
           <% end %>
         </tbody>
