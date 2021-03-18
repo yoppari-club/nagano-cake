@@ -9,7 +9,9 @@
   <% @customers.each do |customer| %>
   <tr>
     <td><%= customer.id %></td>
-    <td><%= customer.last_name + customer.first_name %></td>
+    <td>
+      <%= link_to customer.last_name + customer.first_name, admin_customer_path(customer.id) %>
+    </td>
     <td><%= customer.email %></td>
     <td><%= customer.withdrawal_status ? "退会" : "有効" %></td>
   </tr>
