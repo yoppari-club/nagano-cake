@@ -1,56 +1,68 @@
-<h2>新規会員登録</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "customers/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label "名前" %>
-    <%= f.label "(姓)" %>
-    <%= f.text_field :last_name, autocomplete: "令和" %>
-
-    <%= f.label "(名)" %>
-    <%= f.text_field :first_name, autocomplete: "道子" %>
-  </div>
-  <div class="field">
-    <%= f.label "フリガナ" %>
-    <%= f.label "(セイ)" %>
-    <%= f.text_field :last_name_kana, autocomplete: "レイワ" %>
-
-    <%= f.label "(メイ)" %>
-    <%= f.text_field :first_name_kana, autocomplete: "ミチコ" %>
-  </div>
-  <div class="field">
-    <%= f.label "メールアドレス" %>
-    <%= f.email_field :email, autocomplete: "sample@example.com" %>
-  </div>
-  <div class="field">
-    <%= f.label "郵便番号(ハイフンなし)" %>
-    <%= f.text_field :postcode, autocomplete: "0000000" %>
-  </div>
-  <div class="field">
-    <%= f.label "住所" %>
-    <%= f.text_field :address, autocomplete: "東京都渋谷区代々木神園町0-0" %>
-  </div>
-  <div class="field">
-    <%= f.label "電話番号(ハイフンなし)" %>
-    <%= f.text_field :tel, autocomplete: "00000000000" %>
-  </div>
-
-  <div class="field">
-    <% if @minimum_password_length %>
-    <%= f.label "パスワード(#{@minimum_password_length}文字以上)" %>
+<div class="container mt-5 mb-5">
+  <div class="col-8 mx-auto">
+    <h2>新規会員登録</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "customers/shared/error_messages", resource: resource %>
+      <table>
+        <tr>
+          <td><%= f.label "名前" %></td>
+          <td><%= f.label "(姓)" %></td>
+          <td><%= f.text_field :last_name, autocomplete: "令和" %></td>
+          <td><%= f.label "(名)" %></td>
+          <td><%= f.text_field :first_name, autocomplete: "道子" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label "フリガナ" %></td>
+          <td><%= f.label "(セイ)" %></td>
+          <td><%= f.text_field :last_name_kana, autocomplete: "レイワ" %></td>
+          <td><%= f.label "(メイ)" %></td>
+          <td><%= f.text_field :first_name_kana, autocomplete: "ミチコ" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label "メールアドレス" %></td>
+          <td></td>
+          <td><%= f.email_field :email, autocomplete: "sample@example.com" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label "郵便番号(ハイフンなし)" %></td>
+          <td></td>
+          <td><%= f.text_field :postcode, autocomplete: "0000000" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label "住所" %></td>
+          <td></td>
+          <td><%= f.text_field :address, autocomplete: "東京都渋谷区代々木神園町0-0" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label "電話番号(ハイフンなし)" %></td>
+          <td></td>
+          <td><%= f.text_field :tel, autocomplete: "00000000000" %></td>
+        </tr>
+        <tr>
+          <td>
+            <% if @minimum_password_length %>
+              <%= f.label "パスワード(#{@minimum_password_length}文字以上)" %>
+            <% end %>
+          </td>
+          <td></td>
+          <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label "パスワード(確認用)" %></td>
+          <td></td>
+          <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+        </tr>
+      </table>
+      <div class="actions">
+        <%= f.submit "新規登録", class:"btn btn-success my-4 col-4" %>
+      </div>
     <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label "パスワード(確認用)" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+<div class="container mt-5 mb-5">
+  <div class="col-8 mx-auto">
+    <%= render "customers/shared/links" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
-
-<%= render "customers/shared/links" %>
+</div>
+    
