@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="low">
+  <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-10 px-10 px-sm-0 mx-auto">
       <h2>注文情報入力</h2>
       <%= form_with model: @order, url: {controller: 'public/orders', action: 'confirm' },  local:true do |f| %>
@@ -11,9 +11,9 @@
       <p><%= "〒#{current_customer.postcode} #{current_customer.address}" %></p>
       <p><%= current_customer.last_name + current_customer.first_name  %></p>
       <%= f.radio_button :address_option, 1 %>登録済み住所から選択<br>
-      <%= f.collection_select(:shipping_address, @shipping_addresses, :id, :shipping_postcode_and_address_and_name) %><br>
+      <%= f.collection_select(:registration_shipping_address, @shipping_addresses, :id, :shipping_postcode_and_address_and_name) %><br>
       <%= f.radio_button :address_option, 2 %>新しいお届け先<br>
-      <table>
+      <table>raila
         <tr>
           <td>郵便番号（ハイフン無し）</td>
           <td><%= f.text_field :shipping_postcode %></td>
