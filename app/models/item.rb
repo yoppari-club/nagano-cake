@@ -6,6 +6,8 @@ class Item < ApplicationRecord
   
   attachment :image
   
-
-  
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :genre, presence: true
+  validates :price_excluding_tax, presence: true
 end
