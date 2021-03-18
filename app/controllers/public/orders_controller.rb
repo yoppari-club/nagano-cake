@@ -1,5 +1,14 @@
 class Public::OrdersController < ApplicationController
   include Public::OrdersHelper
+  before_action :authenticate_customer!
+  before_action :cart_check, only: [:new, :confirm, :create]
+
+  def cart_check
+    unless CartItem.find_by(customer_id: current_customer.id)
+      flash[:danger] = "カートに商品がない状態です"
+      redirect_to root_url
+    end
+  end
 
   def new
     @order = Order.new
@@ -19,6 +28,10 @@ class Public::OrdersController < ApplicationController
       shipping = ShippingAddress.find(params[:order][:registration_shipping_address])
       @order.order_in_postcode_address_name(shipping.shipping_postcode, shipping.shipping_address, shipping.shipping_name)
     elsif address_option == 2
+      if params[:order][:shipping_postcode].blank? || params[:order][:shipping_address].blank? || params[:order][:shipping_name].blank?
+        flash[:danger] = "新しいお届け先の内容に不備があります"
+        redirect_back(fallback_location: root_path)
+      end
       @order.order_in_postcode_address_name(params[:order][:shipping_postcode], params[:order][:shipping_address], params[:order][:shipping_name])
     else
     end
