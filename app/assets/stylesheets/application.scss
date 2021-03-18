@@ -27,10 +27,13 @@ body, input, textarea, button, select {
     font-family: Montserrat, 游ゴシック, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
+body {
+  background-color: #f5f2eb;
+}
+
 header {
   background-color: #eee9dd;
   color: #592e15;
-  border:solid 1px black;
 }
 
 .navbar-nav ul li {
@@ -49,15 +52,14 @@ footer {
 
 footer {
   height: 100px;
-  border:solid 1px black;
 }
 
 .nav-item {
   margin: 20px;
-  
 }
 
 
+// ページネーションのCSS
 .pagination>li>a { 
   border: none;     /*枠線をなくす*/
   color: #696969;   /*文字の色を変える*/
@@ -76,4 +78,20 @@ footer {
 
 .pagination {
   justify-content: center;
+}
+
+
+// リンクの文字色、背景色、カーソル時の色変更
+
+.page-link {
+  background-color: #f5f2eb;
+}
+
+a {
+  color: #592e15;
+}
+
+a:hover {
+  color:  #592e15;
+  text-decoration: none;
 }
