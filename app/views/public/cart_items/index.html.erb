@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="low">
+  <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-10 px-10 px-sm-0 mx-auto">
       <h2>ショッピングカート</h2>
       <%= link_to "カートを空にする", cart_items_destroy_all_path, class: "btn btn-danger float-right", method: :delete, data: { confirm: '削除しますか？' } %>
@@ -17,7 +17,7 @@
           <% @total_amount = 0 %>
           <% @cart_items.each do |cart_item| %>
             <tr>
-              <td><%= attachment_image_tag cart_item.item, :image_id, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><%= cart_item.item.name %></td>
+              <td><%= attachment_image_tag cart_item.item, :image_id, format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %><%= cart_item.item.name %></td>
               <td><%= change_price_excluding_tax(cart_item.item.price_excluding_tax) %></td>
               <td><%= render "item_amount_form", cart_item: cart_item %></td>
               <td><%= amount = change_price_excluding_tax(cart_item.item.price_excluding_tax * cart_item.amount) %></td>
