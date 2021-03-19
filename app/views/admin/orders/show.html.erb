@@ -41,7 +41,9 @@
     <tr>
       <td><%= order_detail.item.name %> </td>
       <td><%= change_price_excluding_tax(order_detail.price_including_tax) %></td>
-      <td><%= order_detail.amount %></td>
+      <td>
+        <%= order_detail.amount %>
+      </td>
       <td><%= change_price_excluding_tax(order_detail.price_including_tax) * order_detail.amount %>円</td>
       <td>
         <%= form_with model: order_detail, url: admin_order_detail_path, method: :patch, local: true do |f| %>
@@ -54,3 +56,11 @@
     <% end %>
   </tbody>
 </table>
+
+<p>
+  <% @add_tax_total_payment = change_price_excluding_tax(@order.total_payment) %>
+  商品合計 <%= @add_tax_total_payment %>
+</p>
+<p>送料  <%= @order.shipping_fee %>円</p>
+<% @total_payment_add_shipping_fee = @add_tax_total_payment + @order.shipping_fee %>
+<p>請求金額合計  <%= @total_payment_add_shipping_fee %> 円</p>
