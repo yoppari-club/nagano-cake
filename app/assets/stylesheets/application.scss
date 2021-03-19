@@ -24,7 +24,7 @@
 }
 
 body, input, textarea, button, select {
-    font-family: Montserrat, 游ゴシック, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: Montserrat, 游ゴシック, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 body {
@@ -36,17 +36,17 @@ main {
 }
 
 header {
-    font-size: 15px;
+  font-size: 15px;
   background-color: #eee9dd;
   color: #592e15;
 }
 
 .navbar-nav ul li {
-    display: inline-block;
-    list-style-type: none;
-    font-family: "Neuzeit Office Soft Rounded", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+  display: inline-block;
+  list-style-type: none;
+  font-family: "Neuzeit Office Soft Rounded", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
     
 
@@ -60,21 +60,18 @@ footer {
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
-    padding: 10px 0;
+  padding: 30px 0;
 }
 
 section .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
 }
 
 
 #footer h5{
-	padding-left: 10px;
-  border-left: 3px solid #eeeeee;
   padding-bottom: 6px;
-  margin-bottom: 20px;
 }
 #footer a {
   text-decoration: none !important;
@@ -96,9 +93,6 @@ section .section-title {
 	margin-top:-10px;
 }
 
-#footer ul.social li a:hover{
-	color:#eeeeee;
-}
 #footer ul.quick-links li{
 	padding: 3px 0;
 	-webkit-transition: .5s all ease;
@@ -114,15 +108,15 @@ section .section-title {
 	margin-right: 5px;
 }
 #footer ul.quick-links li:hover a i {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 @media (max-width:767px){
 	#footer h5 {
-    padding-left: 0;
-    border-left: transparent;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
+  padding-left: 0;
+  border-left: transparent;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
 }
 }
 
@@ -130,6 +124,26 @@ section .section-title {
   margin: 20px;
 }
 
+.mail-box {
+  border: 1px solid #592e15;
+  background: rgba(255, 255, 255, 0.4);
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+  padding: 8px 15px;
+}
+
+.mail-magazine {
+  margin: 10px 0;
+  width: 80px;
+  height: 35px;
+  background-color: #592e15;
+  color: #eddfce;
+}
+
+.mail-magazine:hover{
+	color:#eeeeee;
+}
 
 // ページネーションのCSS
 .pagination>li>a { 

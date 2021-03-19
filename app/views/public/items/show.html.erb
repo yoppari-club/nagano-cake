@@ -6,8 +6,12 @@
     <div class="col-md-4 item-details mr-auto">
       <h2><strong><%= @item.name %></strong></h2>
       <h4><%= @item.description %></h4>
-      <h3>¥ <%= change_price_excluding_tax( @item.price_excluding_tax) %> (税込)</h3>
-      <p><%= render "item_amount_form", cart_item: @cart_item, item: @item %></p>
+      <%  if @item.sales_status == true %>
+        <h3>¥ <%= change_price_excluding_tax( @item.price_excluding_tax) %> (税込)</h3>
+        <p><%= render "item_amount_form", cart_item: @cart_item, item: @item %></p>
+      <% else %>
+        <h3 class="text-danger">販売停止中です</h3>
+      <% end %>
       </div> 
   </div>
 </div>
