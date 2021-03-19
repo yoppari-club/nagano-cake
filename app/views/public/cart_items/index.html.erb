@@ -11,10 +11,12 @@
   </div>
 
   <% if @cart_items.empty? %>
-    <div class="text-center" style="height: 400px;">
-      <h2 style="line-height: 200px; white-space: nowrap;">カートに商品が入っておりません</h2>
+    <div style="height: 200px;"></div>
+    <div class="text-center">
+      <h2>カートに商品が入っておりません</h2>
       <%= link_to "買い物を続ける", root_url, class: "btn btn-primary" %>
     </div>
+    <div style="height: 200px;"></div>
 
   <% else %>
   <div class="row">
