@@ -27,7 +27,13 @@
             <% end %>
             <td><%= item.price_excluding_tax %></td>
             <td><%= item.genre.name %></td>
-            <td><%= item.sales_status? ? '販売中' : '売り切れ' %></td>
+            <td>
+              <% if item.sales_status == true %>
+               <p class="text-success font-weight-bold">販売中</p>
+              <% else %>
+                <p class="text-secondary">販売停止中</p>
+              <% end %>
+            </td>
           </tr>
           <% end %>
         </tbody>
