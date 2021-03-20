@@ -42,7 +42,7 @@ RSpec.describe "CartItems", type: :system do
       visit item_path(item)
       fill_in "cart_item_amount", with: 3
       click_button "commit"
-      expect(page).to have_content "キャンディ"
+      expect(page).to have_content "カートに存在済のアイテムです"
       expect(page).to have_field "cart_item_amount", with: 5
     end
   end
