@@ -27,11 +27,12 @@ class Public::SessionsController < Devise::SessionsController
   # end
   
   def reject_withdraw_customer
-    @customer = current_customer
-    if @customer.withdrawal_status == true
-      reset_session
-      redirect_to new_customer_session_path
-      flash[:notice] = "退会済みです" 
+    @customer = Customer.find_by(email: params[:customer][:email].downcase)
+    if @customer
+      if (@customer.valid_password?(params[:customer][:password]) && (@customer.active_for_authentication? == false))
+        flash[:notice] = "退会済みのためログインできません。"
+        redirect_to new_customer_session_path
+      end
     end
   end
 end
