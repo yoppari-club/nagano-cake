@@ -29,10 +29,15 @@ body, input, textarea, button, select {
 
 body {
   background-color: #f5f2eb;
+  color: #592e15;
 }
 
 main {
   margin: 30px auto;
+}
+
+.table {
+  color: #592e15;
 }
 
 header {
@@ -111,6 +116,10 @@ section .section-title {
   font-weight: 700;
 }
 
+.footer-lists {
+  margin-left: 10px;
+}
+
 @media (max-width:767px){
 	#footer h5 {
   padding-left: 0;
@@ -181,4 +190,8 @@ a {
 a:hover {
   color:  #592e15;
   text-decoration: none;
+}
+
+.company-table {
+  margin-top: 20px;
 }
