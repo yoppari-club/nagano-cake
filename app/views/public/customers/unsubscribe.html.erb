@@ -1,6 +1,23 @@
-<h1>退会画面</h1>
-退会しますか？
+<div class="container mt-5 mb-5">
+  <div class="row offset-md-1">
+    <div class="col-4 mb-4">
+      <h1>退会画面</h1>
+    </div>
+  </div>
+  <div class="row offset-md-2">
+    <div class="col-4 mb-4">
+      <h5>退会しますか？</h5>
+    </div>
+  </div>
+  <div class="row offset-md-2">
+    <div class="col-3 mb-4">
+      <%= link_to "退会しない", customers_path, class:"btn btn-success" %>
+    </div>
+    <div class="col-3 mb-4">
+      <%= link_to "退会する", customers_withdraw_path, class:"btn btn-danger", method: :patch, data: { confirm: "本当に退会しますか？" } %>
+    </div>
+  </div>
+</div>
 
-  <%= button_to "退会する", customers_withdraw_path, method: :patch, data: { confirm: "本当に退会しますか？" } %>
+
   
-  <%= link_to "退会しない", customers_path %>
