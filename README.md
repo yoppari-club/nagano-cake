@@ -7,11 +7,23 @@
 
  長野県にあるケーキ屋（製菓屋）のECサイトになります。
  
+# 概要
  
  
+# コンセプト
+
+# 機能一覧
+
+ 
+# gem一覧
+- Devise
+- kaminari
+- bootstrap
+
 
 # 動作環境
-Ruby
-Ruby on Rails
+- Ruby
+- Ruby on Rails
+
 
 
