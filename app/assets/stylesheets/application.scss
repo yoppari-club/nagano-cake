@@ -29,10 +29,15 @@ body, input, textarea, button, select {
 
 body {
   background-color: #f5f2eb;
+  color: #592e15;
 }
 
 main {
   margin: 30px auto;
+}
+
+.table {
+  color: #592e15;
 }
 
 header {
@@ -185,4 +190,8 @@ a {
 a:hover {
   color:  #592e15;
   text-decoration: none;
+}
+
+.company-table {
+  margin-top: 20px;
 }

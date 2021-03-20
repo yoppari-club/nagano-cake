@@ -31,6 +31,7 @@ class Public::SessionsController < Devise::SessionsController
     if @customer.withdrawal_status == true
       reset_session
       redirect_to new_customer_session_path
+      flash[:notice] = "退会済みです" 
     end
   end
 end
