@@ -8,11 +8,11 @@ class Admin::OrderDetailsController < ApplicationController
          @order.order_status = 2
          @order.save
       elsif
-        @order.order_details.pluck(:production_status).all?{"製作完了"}
+        @order.order_details.pluck(:production_status).all?{|status|status == "製作完了"}
         @order.order_status = 3
         @order.save
       end
-    redirect_to admin_order_path(@order)
+    redirect_to admin_order_path(@order), notice: "製作ステータスを変更しました"
     else
       redirect_back(fallback_location: root_path)
 

@@ -12,7 +12,7 @@ class Admin::OrdersController < ApplicationController
       if @order.order_status.include?("入金確認")
          @order_details.update( production_status: 1)
       end
-    redirect_to admin_order_path(@order), notice: "You have updated order_status successfully."
+    redirect_to admin_order_path(@order), notice: "注文ステータスを変更しました"
     else
       render "show"
     end
