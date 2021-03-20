@@ -1,12 +1,13 @@
 <div class="container mt-5 mb-5">
-  <div class="row">
-    <div class="col-md-5 text-right ml-auto">
+	<div class="row text-center text-xs-center text-sm-left text-md-left ">
+    <div class="col-xs-12 col-sm-12 col-md-6 mx-auto text-center">
      <%= attachment_image_tag @item, :image, size: "280x200", format: "jpeg", fallback: "no_image.jpeg", class:"lb" %>
     </div>
-    <div class="col-md-4 item-details mr-auto">
+    <div class="col-xs-12 col-sm-12 col-md-6 item-details mx-auto">
       <h2><strong><%= @item.name %></strong></h2>
-      <h4><%= @item.description %></h4>
+      <h4><%= simple_format(@item.description)%></h4>
       <%  if @item.sales_status == true %>
+        <p class="text-success">販売中</p>
         <h3>¥ <%= change_price_excluding_tax( @item.price_excluding_tax) %> (税込)</h3>
         <p><%= render "item_amount_form", cart_item: @cart_item, item: @item %></p>
       <% else %>

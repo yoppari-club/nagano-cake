@@ -29,19 +29,12 @@
   padding: 0;
 }
 
-.new-item-container{
-  display: flex;
+.all-items-show-button{
+  text-align: right;
 }
 
-.new-item-box{
-  display: inline-box;
-}
-
-.about-img{
-  width: 500px;
-  height: 500px;
-  background-image: image-url("shopImage.jpg");
-  background-size: cover;
-  background-position: center;
-
+.img-wrap:hover{
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
 }
