@@ -9,6 +9,10 @@ class Customer < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   
   validates :email, uniqueness: true
+  
+  def active_for_authentication?
+    super && (self.withdrawal_status == false)
+  end
 
          
 end
