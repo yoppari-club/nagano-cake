@@ -19,7 +19,11 @@
           <% end %>
           <div class="card-body">
             <p class="card-text"><%= item.name %></p>
-            <p class="card-text"><%= item.price_excluding_tax %>円(税抜き)</p>
+            <% if item.sales_status == true %>
+              <p class="card-text"><%= item.price_excluding_tax %>円(税抜き)</p>
+            <% else %>
+              <p class="card-text text-danger">販売停止中</p>
+            <% end %>
           </div>
         </div>
       </div>
