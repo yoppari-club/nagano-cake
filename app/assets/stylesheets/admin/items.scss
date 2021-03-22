@@ -19,3 +19,15 @@ a.btn--circle i {
   transition: all .3s;
   letter-spacing: 0;
 }
+
+.admin-items {
+  table-layout: fixed;
+}
+
+.field_with_errors{
+  display: contents;
+}
+
+.link {
+  text-decoration: underline;
+}

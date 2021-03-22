@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.customer-items {
+  margin: 0 auto;
+}
+
 .img-wrap{
-  width: 255px;
+  width: 100%;
   height: 180px;
   margin: 20px auto 0;
   transition-duration: 0.5s;
@@ -39,3 +43,10 @@ h4 {
   padding-left :10px;
 }
 
+.item-name {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+}

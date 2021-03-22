@@ -3,6 +3,9 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @orders = Order.all
     @order_details = OrderDetail.where(order_id: @order)
+    @production_status = @order.order_details.pluck(:production_status)
+    @select_order_status = order_status_validate(@order.order_status, @production_status)
+    @select_product_status = product_status_validate()
   end
 
   def update
@@ -12,11 +15,22 @@ class Admin::OrdersController < ApplicationController
       if @order.order_status.include?("入金確認")
          @order_details.update( production_status: 1)
       end
-    redirect_to admin_order_path(@order), notice: "注文ステータスを変更しました"
+    flash[:success] = "制作ステータスを変更しました。"
+    redirect_to admin_order_path(@order)
     else
       render "show"
     end
   end
+
+  def order_status_validate(order_status,production_status)
+    if order_status == 0
+      return order_status.except(:"製作中",:"発送準備中",:"発送済み")
+    end
+  end
+
+  def product_status_validate
+  end
+
 
   private
 
