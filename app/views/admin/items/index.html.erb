@@ -20,14 +20,14 @@
         <% @items.each do |item| %>
         <tbody>
           <tr>
-            <td><%= item.id %></td>
-            <td><%= link_to admin_item_path(item.id) do %>
+            <td class="align-middle"><%= item.id %></td>
+            <td class="align-middle"><%= link_to admin_item_path(item.id) do %>
               <%= item.name %>
             </td>
             <% end %>
-            <td><%= item.price_excluding_tax %></td>
-            <td><%= item.genre.name %></td>
-            <td>
+            <td class="align-middle"><%= item.price_excluding_tax %></td>
+            <td class="align-middle"><%= item.genre.name %></td>
+            <td class="align-middle">
               <% if item.sales_status == true %>
                <p class="text-success font-weight-bold">販売中</p>
               <% else %>
@@ -35,11 +35,10 @@
               <% end %>
             </td>
           </tr>
-          <% end %>
         </tbody>
-        <%= paginate @items %>
+        <% end %>
       </table>
+      <%= paginate @items %>
     </div>
   </div>
 </div>
-  
