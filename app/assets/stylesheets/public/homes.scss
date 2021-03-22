@@ -101,8 +101,8 @@
 #cork:before,
 #cork:after{
     background:#DBA560;
-    background-image:-webkit-linear-gradient(left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
-    background-image:linear-gradient(left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
+    background-image:-webkit-linear-gradient(to left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
+    background-image:linear-gradient(to left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
     background-size:10px 10px;
 }
 
@@ -120,8 +120,8 @@
     width:14px;
     height:14px;
     background:#86431C;
-    background-image:-webkit-linear-gradient(top, #A26937, #A26937 50%, #57311C 55% , #57311C 65% , #A26937 85% , #A26937 100% );
-    background-image:linear-gradient(top, #A26937, #A26937 50%, #57311C 55% , #57311C 65% , #A26937 85% , #A26937 100% );
+    background-image:-webkit-linear-gradient(to top, #A26937, #A26937 50%, #57311C 55% , #57311C 65% , #A26937 85% , #A26937 100% );
+    background-image:linear-gradient(to top, #A26937, #A26937 50%, #57311C 55% , #57311C 65% , #A26937 85% , #A26937 100% );
     background-size:10px;
     box-shadow:inset 0px -1px 2px rgba(0, 0, 0, 0.5),inset 0px 1px 1px rgba(0, 0, 0, 0.2);
     z-index:1;
