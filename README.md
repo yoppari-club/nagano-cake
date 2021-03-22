@@ -1,16 +1,39 @@
 # README
 
-# ケーキ屋のECサイト(NAGANO CAKES)
+# アプリケーション名
+
+NAGANO CAKE STORE(ケーキ屋のECサイト)
 
  ![logo3](https://user-images.githubusercontent.com/77328172/111861055-b03bc300-898e-11eb-9f1c-068e630febc6.png)
 
  長野県にあるケーキ屋（製菓屋）のECサイトになります。
  
-# 概要
- 
- 
- 
-# コンセプト
+# アプリケーション概要
+
+
+
+# テスト用アカウント
+
+**管理者用**<br>
+メールアドレス:admin@gmail.com<br>
+パスワード:administrator
+
+**顧客用**<br>
+メールアドレス：test1@gmail.com<br>
+パスワード:123456<br>
+
+# アプリケーションURL
+
+
+
+# 使用方法
+
+
+
+# 使用言語
+- Ruby on Rails
+- Ruby
+
 
 # 機能一覧
 
@@ -34,8 +57,6 @@
 |jp_prefecture| 住所自動反映|
 
 # 動作環境
-- Ruby
-- Ruby on Rails
 
 
 
