@@ -24,18 +24,18 @@
       <table class="table table-bordered ">
         <thead>
           <tr>
-            <th class="table-active">商品名</th>
-            <th class="table-active">単価(税込み)</th>
-            <th class="table-active">数量</th>
-            <th class="table-active">小計</th>
-            <th class="table-active"></th>
+            <th class="table-active" style="width:35%">商品名</th>
+            <th class="table-active" style="width:15%">単価(税込み)</th>
+            <th class="table-active" style="width:20%">数量</th>
+            <th class="table-active" style="width:10%">小計</th>
+            <th class="table-active" style="width:20%"></th>
           </tr>
         </thead>
         <tbody>
           <% @total_amount = 0 %>
           <% @cart_items.each.with_index(1) do |cart_item, i| %>
             <tr>
-              <td class="align-middle"><%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %><%= cart_item.item.name %></td>
+              <td class="align-middle" style="word-break:break-all"><%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %><%= cart_item.item.name %></td>
               <td class="align-middle"><%= change_price_excluding_tax(cart_item.item.price_excluding_tax).to_s(:delimited) %></td>
               <td class="align-middle">
                 <%= form_with model: cart_item, local: true do |f| %>
