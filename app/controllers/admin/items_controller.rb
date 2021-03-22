@@ -11,10 +11,10 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      flash[:success] = "商品の新規登録が完了しました。"
+      flash.now[:success] = "商品の新規登録が完了しました。"
       redirect_to admin_item_path(@item)
     else
-      flash[:danger] = "商品の新規登録内容に不備があります。"
+      flash.now[:danger] = "商品の新規登録内容に不備があります。"
       render :new
     end
   end
@@ -30,10 +30,10 @@ class Admin::ItemsController < ApplicationController
   def update
      @item = Item.find(params[:id])
      if @item.update(item_params)
-       flash[:success] = "商品詳細の変更が完了しました。"
+       flash.now[:success] = "商品詳細の変更が完了しました。"
        redirect_to admin_item_path(@item)
      else
-       flash[:danger] = "商品詳細の変更内容に不備があります。"
+       flash.now[:danger] = "商品詳細の変更内容に不備があります。"
        render :edit
      end
   end  
