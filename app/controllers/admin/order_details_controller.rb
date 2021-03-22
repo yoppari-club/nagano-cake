@@ -12,8 +12,10 @@ class Admin::OrderDetailsController < ApplicationController
         @order.order_status = 3
         @order.save
       end
-    redirect_to admin_order_path(@order), notice: "製作ステータスを変更しました"
+    flash[:success] = "制作ステータスを変更しました。"
+    redirect_to admin_order_path(@order)
     else
+      
       redirect_back(fallback_location: root_path)
 
     end
