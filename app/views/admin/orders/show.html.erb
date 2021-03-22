@@ -11,7 +11,7 @@
         <tr><th class="table-active" style="width:20%">支払い方法</th><td><%= @order.payment_option %></td></tr>
         <tr><th class="table-active" style="width:20%"><%= f.label :order_status, "注文ステータス" %></th>
           <td>
-            <%= f.select :order_status,Order.order_statuses.keys %>
+            <%= f.select :order_status,Order.order_statuses.keys, {disabled: "発送準備中"} %>
             <%= f.submit "更新", class: "btn btn-success" %>
           </td>
         </tr>
