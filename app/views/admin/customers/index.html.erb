@@ -13,9 +13,7 @@
       <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.id %></td>
-        <td>
-          <%= link_to customer.last_name + customer.first_name, admin_customer_path(customer.id) %>
-        </td>
+        <td><u><%= link_to customer.last_name + customer.first_name, admin_customer_path(customer.id), class:"font-weight-bold" %></u></td>
         <td><%= customer.email %></td>
         <td>
           <% if customer.withdrawal_status == false %>

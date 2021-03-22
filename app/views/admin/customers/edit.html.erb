@@ -1,7 +1,7 @@
 <div class="container mt-5 mb-5">
   <div class="col-8 mx-auto">
     <h1><%= @customer.last_name + @customer.first_name %>さんの会員詳細</h1>
-    <%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :put do |f| %>
+    <%= form_with model: @customer, url: admin_customer_path(@customer.id), local: :true, method: :put do |f| %>
       <table>
         <tr>
           <td><%= f.label "氏名" %></td>
