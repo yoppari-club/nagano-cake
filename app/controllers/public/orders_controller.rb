@@ -22,9 +22,8 @@ class Public::OrdersController < ApplicationController
     address_option = params[:order][:address_option].to_i
 
     @order.payment_option = params[:order][:payment_option].to_i
-    @order.customer_id = current_customer.id #仮入力部分
-    @order.shipping_fee = 800 #仮入力部分
-    @order.total_payment = 1 #仮入力部分
+    @order.temporary_information_input(customer.id)
+
     if address_option == 0
       @order.order_in_postcode_address_name(customer.postcode, customer.address, customer.last_name)
     elsif address_option == 1
