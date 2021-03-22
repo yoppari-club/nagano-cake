@@ -1,24 +1,28 @@
 <div class="container mt-5 mb-5">
   <div class="row shipping-new">
-    <div class="col-md-8 mx-auto">
+    <div class="col-sm-10 px-sm-0 offset-sm-1">
       <h2>配送先登録/一覧</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 px-sm-0 mx-auto">
       <%= form_with model: @shipping_address, local: true do |f| %>
       <table>
         <tr>
         <div calss="form-group">
-          <td><%= f.label :"郵便番号(ハイフンなし)" %></td>
+          <th><%= f.label :"郵便番号(ハイフンなし)" %></th>
           <td><%= f.text_field :shipping_postcode, placeholder:"0000000" %></td>
         </div>
         </tr>
         <tr>
         <div calss="form-group">
-          <td><%= f.label :"住所" %></td>
+          <th><%= f.label :"住所" %></th>
           <td><%= f.text_field :shipping_address, placeholder:"住所を入力してください", :size => "50" %></td>
         </div>
         </tr>
         <tr>
         <div calss="form-group">
-          <td><%= f.label :"宛名" %></td>
+          <th><%= f.label :"宛名" %></th>
           <td><%= f.text_field :shipping_name, placeholder:"名前を入力してください"%></td>
         　<td><%= f.submit "新規登録", class:"btn btn-success" %></td>
         </div>
@@ -28,7 +32,7 @@
     </div>
   </div>
   <div class="row shipping-lists">
-    <div class="col-md-8 mx-auto">
+    <div class="col-sm-10 px-sm-0 mx-auto">
       <table class="table table-bordered">
         <thead class="table-active">
           <tr>
