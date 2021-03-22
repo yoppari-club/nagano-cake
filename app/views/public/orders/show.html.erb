@@ -26,16 +26,16 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th class="table-active">商品</th>
-            <th class="table-active">単価（税込み）</th>
-            <th class="table-active">個数</th>
-            <th class="table-active">小計</th>
+            <th class="table-active" style="width:60%">商品</th>
+            <th class="table-active" style="width:20%">単価（税込み）</th>
+            <th class="table-active" style="width:10%">個数</th>
+            <th class="table-active" style="width:10%">小計</th>
           </tr>
         </thead>
         <tbody>
         <% @order.order_details.each do |order_detail| %>
           <tr>
-            <td><%= order_detail.item.name %></td>
+            <td style="word-break:break-all"><%= order_detail.item.name %></td>
             <td><%= order_detail.price_including_tax %></td>
             <td><%= order_detail.amount %></td>
             <td><%= order_detail.amount * order_detail.price_including_tax %></td>

@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  VALID_POSTCODE_REGEX = /\A\d{7}$\z/
+  VALID_POSTCODE_REGEX = /\A\d{7}\z/
 
   validates :total_payment, presence: true
   validates :payment_option, presence: true
