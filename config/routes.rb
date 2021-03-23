@@ -33,6 +33,7 @@ devise_for :customers, controllers: {
     resources :items, only: [:index, :show]
     root "homes#top"
     get "/about" => "homes#about"
+    get "/search" => "items#search"
   end
 
 end
