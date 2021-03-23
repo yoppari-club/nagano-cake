@@ -8,4 +8,10 @@ class Public::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
   end
+  
+  def search
+    @items = Item.page(params[:page]).per(10)
+    @word_for_search = Genre.find(params[:word_for_search])
+    @search_items = Item.where(genre: params[:word_for_search])
+  end
 end
