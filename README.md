@@ -59,7 +59,7 @@ NAGANO CAKE STORE(ケーキ屋のECサイト)
 |bootstrap| レイアウト |
 |jquery-rails| jquery|
 |font-awesome-sass| fontawesomeを使用 |
-|pry-rails| |　コンソール変更・バグ修正 |
+|pry-rails| コンソール変更・バグ修正 |
 |kaminari|ページング |
 |jp_prefecture| 住所自動反映|
 
