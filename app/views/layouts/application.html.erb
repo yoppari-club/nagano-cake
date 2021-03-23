@@ -48,10 +48,12 @@
                   <i class="fas fa-sign-out-alt">ログアウト</i>
                 <% end %>
               </li>
-              <form>
-                <input type="search"  placeholder="キーワードを入力" size="14" class="mt-3">
-                <input type="submit" value="検索">
-              </form>
+              <li class="mt-3">
+                <%= form_with url: admin_search_path, method: :get, local: true do |f| %>
+                  <%= f.collection_select :word_for_search, Genre.all, :id, :name %>
+                  <%= f.submit "検索" %>
+                <% end %>
+              </li>
 
             <!--customersログイン時のヘッダー-->
             <% elsif customer_signed_in? %>

@@ -18,6 +18,7 @@ devise_for :customers, controllers: {
     resources :genres, only: [:index, :edit, :create, :update]
     resources :items, only: [:index, :create, :new, :show, :edit, :update]
     resources :order_details, only: [:update]
+    get "/search" => "items#search"
   end
   scope module: :public do
     resources :shipping_addresses, only: [:index, :create, :destroy, :edit, :update]

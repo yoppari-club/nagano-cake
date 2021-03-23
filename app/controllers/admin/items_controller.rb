@@ -38,6 +38,11 @@ class Admin::ItemsController < ApplicationController
      end
   end  
 
+  def search
+    @search_items = Item.looks(params[:word_for_search])
+    @items = Item.page(params[:page]).per(10)
+  end
+
   private
   def item_params
     params.require(:item).permit(:image, :name, :description, :genre_id, :price_excluding_tax, :sales_status)
