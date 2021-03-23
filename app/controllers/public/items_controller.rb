@@ -11,7 +11,8 @@ class Public::ItemsController < ApplicationController
   
   def search
     @items = Item.page(params[:page]).per(10)
-    @word_for_search = Genre.find(params[:word_for_search])
-    @search_items = Item.where(genre: params[:word_for_search])
+    if @word_for_search = Genre.find(params[:word_for_search])
+      @search_items = Item.where(genre: params[:word_for_search])
+    end
   end
 end
