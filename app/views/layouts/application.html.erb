@@ -105,7 +105,7 @@
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_customer_registration_path do %>
+                <%= link_to new_customer_registration_path, data: {"turbolinks" => false} do %>
                   <i class="fas fa-user-plus">新規登録</i>
                 <% end %>
               </li>
