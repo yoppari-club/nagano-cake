@@ -11,8 +11,5 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :genre, presence: true
   validates :price_excluding_tax, presence: true, numericality: { only_integer: true, greater_than: 0}
-  
-  def self.looks(word_for_search)
-    @item = Item.where(genre: word_for_search)
-  end
+
 end

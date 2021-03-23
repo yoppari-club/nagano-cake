@@ -39,8 +39,9 @@ class Admin::ItemsController < ApplicationController
   end  
 
   def search
-    @search_items = Item.looks(params[:word_for_search])
     @items = Item.page(params[:page]).per(10)
+    @word_for_search = params[:word_for_search]
+    @search_items = Item.where(genre: params[:word_for_search])
   end
 
   private
