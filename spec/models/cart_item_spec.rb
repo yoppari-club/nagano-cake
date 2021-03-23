@@ -17,7 +17,6 @@ RSpec.describe CartItem, "CartItemモデルに関するテスト", type: :model 
       it "個数が空白" do
         cart_item = CartItem.new(item_id: 1,customer_id: 1,amount: "")
         expect(cart_item).to be_invalid
-        expect(cart_item.errors[:amount]).to include("is not a number")
       end
       it "item_idが空白" do
         expect(FactoryBot.build(:cart_item, item_id: "")).to be_invalid
