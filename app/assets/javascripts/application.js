@@ -18,7 +18,8 @@
 //= require turbolinks
 //= require jquery.jpostal
 //= require_tree .
-
+/*global $*/
+/*global jQuery*/
 
 $(function() {
   return $('#customer_postcode').jpostal({
@@ -27,4 +28,15 @@ $(function() {
         "#customer_address": "%3%4%5",
       },
     });
+});
+
+
+document.addEventListener('turbolinks:load', function() {
+jQuery(function() {
+    jQuery('.slide').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+});
 });
