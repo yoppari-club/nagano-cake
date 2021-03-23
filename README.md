@@ -18,7 +18,7 @@ NAGANO CAKE STORE(ケーキ屋のECサイト)
 **管理者用**<br>
 メールアドレス:admin@gmail.com<br>
 パスワード:administrator<br>
-管理者用ログインURL: /admin/sign_up
+管理者用ログインURL: /admin/sign_in
 
 **顧客用**<br>
 メールアドレス：test1@gmail.com<br>
