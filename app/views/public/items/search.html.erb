@@ -24,7 +24,7 @@
             <tbody>
               <tr>
                 <td class="align-middle"><%= item.id %></td>
-                <td class="align-middle"><%= link_to admin_item_path(item.id) do %>
+                <td class="align-middle"><%= link_to item_path(item.id) do %>
                   <u><%= item.name %></u>
                 </td>
                 <% end %>
