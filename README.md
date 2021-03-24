@@ -34,19 +34,17 @@ $ rails s
 
 # 使用言語
 - HTML & SCSS
-- Ruy
+- Ruby
 - JavaScript
 - フレームワーク
- - Ruby on Rails
+  - Ruby on Rails
 
 
 # 機能一覧
 
-| 機能 | 詳細 |
-----  | ----
-|　|　|
-|住所自動反映|郵便番号を入力すると住所の市区町村が自動で入力されます。|
- 
+<img width="530" alt="スクリーンショット 2021-03-24 17 44 59" src="https://user-images.githubusercontent.com/76772716/112280877-ccaa6900-8cc8-11eb-9924-2f7642368c26.png">
+
+
 # gem一覧
 
 | 機能 | 詳細 |
