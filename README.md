@@ -23,12 +23,12 @@ NAGANO CAKE(ケーキ屋のECサイト)
 
 # 使用方法
 
-'''
-$ git clone git@github.com:yoppari-club/nagano-cake.git
-$ bundle install
-$ rails db:seed
+```
+$ git clone git@github.com:yoppari-club/nagano-cake.git<br>
+$ bundle install<br>
+$ rails db:seed<br>
 $ rails s
-'''
+```
 
 # 使用言語
 - Ruby on Rails
