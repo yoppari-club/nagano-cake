@@ -24,15 +24,20 @@ NAGANO CAKE(ケーキ屋のECサイト)
 # 使用方法
 
 ```
-$ git clone git@github.com:yoppari-club/nagano-cake.git<br>
-$ bundle install<br>
-$ rails db:seed<br>
+$ git clone git@github.com:yoppari-club/nagano-cake.git
+$ bundle install
+$ rails db:seed
 $ rails s
 ```
 
+カートに追加から注文までは顧客用ログインが必要になります。
+
 # 使用言語
-- Ruby on Rails
-- Ruby
+- HTML & SCSS
+- Ruy
+- JavaScript
+- フレームワーク
+ - Ruby on Rails
 
 
 # 機能一覧
