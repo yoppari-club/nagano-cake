@@ -39,6 +39,9 @@ $ rails s
 - フレームワーク
   - Ruby on Rails
 
+# ER図
+<img width="952" alt="スクリーンショット 2021-03-24 18 14 34" src="https://user-images.githubusercontent.com/77328172/112284726-e51c8280-8ccc-11eb-8f02-168876ab86c7.png">
+
 
 # 機能一覧
 
