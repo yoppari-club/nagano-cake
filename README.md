@@ -2,7 +2,7 @@
 
 # アプリケーション名
 
-NAGANO CAKE STORE(ケーキ屋のECサイト)
+NAGANO CAKE(ケーキ屋のECサイト)
 
  ![logo3](https://user-images.githubusercontent.com/77328172/111861055-b03bc300-898e-11eb-9f1c-068e630febc6.png)
 
