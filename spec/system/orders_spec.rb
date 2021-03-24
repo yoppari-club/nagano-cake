@@ -13,9 +13,6 @@ RSpec.describe "Orders", type: :system do
       click_button "commit"
     end
 
-    it "注文履歴一覧が登録順で表示される" do
-      expect(1+1).to eq 2
-    end
   end
 
 
