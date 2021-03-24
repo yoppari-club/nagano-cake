@@ -47,7 +47,7 @@ NAGANO CAKE(ケーキ屋のECサイト)
 | 機能 | 詳細 |
 ----  | ----
 |devise| adminとcustomerログイン関連|
-|refile| 画像投稿|
+|refile| ファイルアップロードを行うためのライブラリ　|
 |refile-mini_magick| 画像投稿|
 |bootstrap| レイアウト |
 |jquery-rails| jquery|
