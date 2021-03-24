@@ -23,9 +23,12 @@ NAGANO CAKE(ケーキ屋のECサイト)
 
 # 使用方法
 
-商品一覧から商品を選択します。<br>
-個数を選択し、カートを選択します。<br>
-
+'''
+$ git clone git@github.com:yoppari-club/nagano-cake.git
+$ bundle install
+$ rails db:seed
+$ rails s
+'''
 
 # 使用言語
 - Ruby on Rails
@@ -54,6 +57,7 @@ NAGANO CAKE(ケーキ屋のECサイト)
 |jp_prefecture| 住所自動反映|
 
 # 動作環境
+Rrails 5.2.4.5
 
 # 開発者
 - 柴田哲志
