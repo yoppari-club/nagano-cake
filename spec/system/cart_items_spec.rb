@@ -18,7 +18,7 @@ RSpec.describe "CartItems", type: :system do
       visit new_customer_session_path
       fill_in "customer_email", with: customer.email
       fill_in "customer_password", with: customer.password
-      click_button "commit"
+      click_button "ログイン"
     end
 
     it "カートページに行くと、カートページにいる" do
