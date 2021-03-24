@@ -1,0 +1,140 @@
+// Place all the styles related to the public::homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Sacramento);
+@import url(https://fonts.googleapis.com/css?family=Limelight);
+
+.home-box {
+  width: 800px;
+  height: 500px;
+}
+
+.home-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: image-url("top-image.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.home-text{
+  color:black;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+
+.all-items-show-button{
+  text-align: right;
+}
+
+.img-wrap:hover{
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
+
+.about-img{
+  width: 500px;
+  height: 500px;
+  background-image: image-url("shopImage.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-box{
+  text-align: center;
+}
+
+// 看板
+.plate{
+    width:250px;
+    margin-top:30px;
+    border-radius:10px;
+    border:4px solid rgba(225,225,225,0);
+    position:relative;
+}
+
+#cork{
+    background:url(https://peonyqueen.files.wordpress.com/2015/10/cork02.jpg);
+    box-shadow: inset 0 0 0 3px rgba(85,46,12,0.7), 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.plate span{
+    padding:20px;
+    display:block;
+    text-align:center;
+    font-size:2rem;
+}
+
+#cork span{
+    padding:23px 20px 18px;/*フォントによって上下の位置が変わるので、微調整してください*/
+    font-family: 'Limelight', cursive;
+    color: rgba(85,46,12,0.8);
+    text-shadow:inset 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.plate:before,
+.plate:after{
+    content:"";
+    width:4px;
+    height:50px;
+    position:absolute;
+    top:-35px;
+    box-shadow:inset 0px -1px 1px rgba(0, 0, 0, 0.5),0 0 5px rgba(0, 0, 0, 0.5);
+}
+.plate:before{
+    left:13px;
+}
+.plate:after{
+    right:13px;
+}
+
+#cork:before,
+#cork:after{
+    background:#DBA560;
+    background-image:-webkit-linear-gradient(to left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
+    background-image:linear-gradient(to left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
+    background-size:10px 10px;
+}
+
+.plate span:before,
+.plate span:after{
+    content:"";
+    border-radius:50%;
+    position:absolute;
+    top:10px;
+    box-shadow:inset 0px -1px 2px rgba(0, 0, 0, 0.5),inset 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#cork span:before,
+#cork span:after{
+    width:14px;
+    height:14px;
+    background:#86431C;
+    background-image:-webkit-linear-gradient(to top, #A26937, #A26937 50%, #57311C 55% , #57311C 65% , #A26937 85% , #A26937 100% );
+    background-image:linear-gradient(to top, #A26937, #A26937 50%, #57311C 55% , #57311C 65% , #A26937 85% , #A26937 100% );
+    background-size:10px;
+    box-shadow:inset 0px -1px 2px rgba(0, 0, 0, 0.5),inset 0px 1px 1px rgba(0, 0, 0, 0.2);
+    z-index:1;
+}
+#cork span:before{
+    left:8px;
+}
+#cork span:after{
+    right:8px;
+}
+
+// スライドショー
+.slide-img{
+  width: 100%;
+  height: 500px;
+  text-align: center;
+}
+
+.new-item{
+  margin: 150px;
+}

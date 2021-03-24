@@ -10,7 +10,30 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+//= require jquery_ujs
 //= require activestorage
-//= require turbolinks
+//= require jquery.jpostal
 //= require_tree .
+/*global $*/
+/*global jQuery*/
+
+$(function() {
+  return $('#customer_postcode').jpostal({
+      postcode: ['#customer_postcode'],
+      address: {
+        "#customer_address": "%3%4%5",
+      },
+    });
+});
+
+
+jQuery(function() {
+    jQuery('.slide').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+});

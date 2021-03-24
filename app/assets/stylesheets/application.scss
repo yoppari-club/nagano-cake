@@ -1,0 +1,190 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, input, textarea, button, select {
+  font-family: Montserrat, 游ゴシック, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+body {
+  background-color: #f5f2eb;
+  color: #592e15;
+}
+
+main {
+  color: #592e15;
+}
+
+.table {
+  color: #592e15;
+}
+
+header {
+  font-size: 15px;
+  background-color: #eee9dd;
+  color: #592e15;
+}
+
+.navbar-nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  font-family: "Neuzeit Office Soft Rounded", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Footer */
+
+footer {
+  background-color: #eddfce;
+  color: #592e15;
+}
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+  padding: 30px 0;
+}
+
+section .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+
+#footer h5{
+  padding-bottom: 6px;
+}
+#footer a {
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+  margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+  font-weight: 700;
+}
+
+.footer-lists {
+  margin-left: 10px;
+}
+
+@media (max-width:767px){
+	#footer h5 {
+  padding-left: 0;
+  border-left: transparent;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+}
+
+.nav-item {
+  margin: 20px;
+}
+
+.mail-box {
+  border: 1px solid #592e15;
+  background: rgba(255, 255, 255, 0.4);
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+  padding: 8px 15px;
+}
+
+.mail-magazine {
+  margin: 10px 0;
+  width: 80px;
+  height: 35px;
+  background-color: #592e15;
+  color: #eddfce;
+}
+
+.mail-magazine:hover{
+	color:#eeeeee;
+}
+
+// ページネーションのCSS
+.pagination>li>a { 
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.pagination {
+  justify-content: center;
+}
+
+
+// リンクの文字色、背景色、カーソル時の色変更
+
+.page-link {
+  background-color: #f5f2eb;
+}
+
+
+a {
+  color: #592e15;
+}
+
+a:hover {
+  color:  #592e15;
+}
