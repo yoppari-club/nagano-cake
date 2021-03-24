@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery.jpostal
 //= require_tree .
 /*global $*/
@@ -31,12 +30,10 @@ $(function() {
 });
 
 
-document.addEventListener('turbolinks:load', function() {
 jQuery(function() {
     jQuery('.slide').slick({
         dots: true,
         autoplay: true,
         autoplaySpeed: 3000,
     });
-});
 });
