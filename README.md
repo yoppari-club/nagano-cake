@@ -2,13 +2,13 @@
 
 # アプリケーション名
 
-NAGANO CAKE(ケーキ屋のECサイト)
+NAGANO CAKE(ケーキ屋のECサイト)<br>
+URL：https://nagano-cake-yoppariclub.herokuapp.com/
 
 # アプリケーション概要
  ![logo3](https://user-images.githubusercontent.com/77328172/111861055-b03bc300-898e-11eb-9f1c-068e630febc6.png)
  ![a00de0a35cf2b3e251dab24b6aeff999](https://user-images.githubusercontent.com/77002979/112281735-ba7cfa80-8cc9-11eb-9c47-ede47b2db344.png)
  長野県にあるケーキ屋（製菓屋）のECサイトになります。
- URL：https://nagano-cake-yoppariclub.herokuapp.com/
 
 # テスト用アカウント
 
