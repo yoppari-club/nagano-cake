@@ -15,10 +15,10 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery.jpostal
 //= require_tree .
-
+/*global $*/
+/*global jQuery*/
 
 $(function() {
   return $('#customer_postcode').jpostal({
@@ -26,5 +26,14 @@ $(function() {
       address: {
         "#customer_address": "%3%4%5",
       },
+    });
+});
+
+
+jQuery(function() {
+    jQuery('.slide').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
     });
 });

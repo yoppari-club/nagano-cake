@@ -34,7 +34,8 @@ class Public::OrdersController < ApplicationController
     else
     end
     unless @order.valid?
-      flash[:danger] = "お届け先の内容に不備があります"
+      flash[:danger] = "お届け先の内容に不備があります<br>・#{@order.errors.full_messages.join('<br>・')}"
+      p @order.errors.full_messages
       redirect_back(fallback_location: root_path)
     end
     # render plain: @order.inspect
